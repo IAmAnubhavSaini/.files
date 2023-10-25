@@ -3,7 +3,7 @@
 the dotfiles and more
 
 - .vimrc
-- .gitignore
+- .gitignore (global)
 - .bashrc
 - .gitconfig
 
