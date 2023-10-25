@@ -1,0 +1,18 @@
+[init]
+	defaultBranch = main
+[user]
+	email = iamanubhavsaini+git@gmail.com
+	name = Anubhav Saini
+[core]
+	excludesFile = /home/f0c1s/.gitignore
+[color "diff"]
+	whitespace = red reverse
+[diff]
+	wsErrorHighlight = all
+[pull]
+	rebase = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
