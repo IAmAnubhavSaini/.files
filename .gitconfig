@@ -4,7 +4,7 @@
 	email = iamanubhavsaini+git@gmail.com
 	name = Anubhav Saini
 [core]
-	excludesFile = /home/f0c1s/.gitignore
+	excludesFile = /home/anubhav/.gitignore
 [color "diff"]
 	whitespace = red reverse
 [diff]
