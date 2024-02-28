@@ -17,6 +17,7 @@
 ## windows          ✔
 ## mac              ✔
 
+
 ##
 ## mine
 ##
@@ -694,3 +695,26 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+##
+## Editor directories and files
+##
+
+#.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+##
+## VITE-REACT
+##
+
+# Logs
+pnpm-debug.log*
+
+#node_modules/
+
+dist-ssr/
+*.local
