@@ -1,3 +1,18 @@
+" set encoding
+set encoding=utf8
+
+" set colors
+set t_Co=256
+set term=xterm-256color
+
+" termguicolors
+" if (has("termguicolors"))
+"   set termguicolors
+" endif
+
+" show leader
+set showcmd
+
 " Enable recursive file search in subdirectories
 set path+=**
 
@@ -15,6 +30,13 @@ set backspace=indent,eol,start
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" set list
+set list
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· ",eol:↲,space:·
+
+" set showbreak: show a character at the end of a line when it's wrapped
+set showbreak=↪\
 
 " Use line wrapping and break lines at word boundaries
 set wrap
@@ -39,6 +61,8 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 " Show line numbers on the left side
 set number
 set nu
+hi clear LineNr
+hi LineNr ctermfg=grey ctermbg=black cterm=BOLD
 
 " Show relative numbers
 set relativenumber
@@ -52,6 +76,7 @@ set title
 
 " Automatically change directory to the file's directory
 autocmd BufEnter * silent! lcd %:p:h
+"" autocmd BufRead  *  silent! lcd %:p:h:gs,\\,/,:gs, ,\\ ,
 
 " Set file type for TypeScript and JSX files
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
@@ -60,11 +85,12 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 set ff=unix
 
 " Configure GitGutter signs and colors
-set signcolumn=yes
-highlight SignColumn guibg=yellow ctermbg=white
-highlight GitGutterAdd guifg=#009900 ctermfg=2
-highlight GitGutterChange guifg=#bbbb00 ctermfg=3
-highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+set signcolumn=number
+hi clear SignColumn
+hi SignColumn       ctermfg=grey     ctermbg=black     cterm=BOLD
+hi GitGutterAdd     ctermfg=grey     ctermbg=green     cterm=BOLD
+hi GitGutterChange  ctermfg=grey     ctermbg=yellow    cterm=BOLD
+hi GitGutterDelete  ctermfg=grey     ctermbg=red       cterm=BOLD
 
 " Enable persistent undo, backup, and swap files management
 set undofile
@@ -81,3 +107,86 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
+
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+
+" colors
+set background=dark
+" colorscheme quiet
+colorscheme anubhav
+
+" rust.vim
+" https://github.com/rust-lang/rust.vim
+let g:rustfmt_autosave = 1
+let g:rust_clip_command = 'xclip -selection clipboard'
+
+" Git Gutter
+" Your vimrc
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
+
+" to always show git changes
+set signcolumn=yes
+highlight link GitGutterAddIntraLine DiffAdd
+
+" updates git changes in the gutter and writes buffer to swap file
+set updatetime=1000
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_color_change_percent = 50
+
+" airline powerline fonts
+let g:airline_powerline_fonts = 1
+
+" javascript
+let g:javascript_plugin_jsdoc = 1
+
+
+" eslint
+let g:syntastic_javascript_checkers = ['eslint']
+" lint current file
+noremap <leader>l  :make % <cr>:cwindow<cr>:redraw!<cr>
+" lint and fix current file
+noremap <leader>lf :make --fix % <cr>:cwindow<cr>:redraw!<cr>
+
+" editorconfig
+"" Don't apply editorconfig settings to fugitive buffers; don't mess with fugitive's settings
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+"" Don't apply editorconfig settings to remote files; don't mess with scp's settings
+let g:EditorConfig_exclude_patterns = ['scp://.*']
+
+
+" code completion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" prettier
+packloadall
