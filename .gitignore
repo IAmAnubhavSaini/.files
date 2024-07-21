@@ -718,3 +718,7 @@ pnpm-debug.log*
 
 dist-ssr/
 *.local
+
+## note taking apps
+.obsidian/
+.logseq/
