@@ -1,0 +1,66 @@
+# fetching upstream (helps in fetching pull requests)
+alias _gfu="git fetch upstream"
+
+# remote
+alias _gr="git remote"
+alias _grv="_gr -v"
+alias _gra="_gr add"
+alias _grr="_gr rename"
+
+# branch
+alias _gb="git branch"
+
+# log
+alias _glo="git log"
+alias _graph="_glo --oneline --all --graph"
+alias _graphten="_graph -n10"
+alias _gloten="_glo --oneline -n10"
+alias _glatest_commit_id="_gloten | head -n 1 | awk '{print $1;}'"
+alias _glci="_glatest_commit_id"
+
+# checkout
+alias _gco="git checkout"
+alias _gcod="_gco develop"
+alias _gcom="_gco main"
+alias _gcor="_gco release"
+
+# cherry-pick
+alias _gcp="git cherry-pick"
+
+# status
+alias _gs="git status"
+
+# pull --rebase
+alias _gpr="git pull --rebase"
+alias _gpru="_gpr upstream"
+alias _gpro="_gpr origin"
+
+alias _gprud="_gpru develop"
+alias _gprum="_gpru main"
+alias _gprur="_gpru release"
+
+alias _gprod="_gpro develop"
+alias _gprom="_gpro main"
+alias _gpror="_gpro release"
+
+# push
+alias _gp="git push"
+alias _gpo="_gp origin"
+alias _gpof="_gpo -f"
+alias _gpon="_gpo --no-verify"
+alias _gpofn="_gpof --no-verify"
+alias _gponf="_gpon -f"
+
+## common push targets
+alias _gpom="_gpo main"
+alias _gpod="_gpo develop"
+
+# reset
+alias _grs="git reset --soft"
+alias _grh="git reset --hard"
+
+# git show
+alias _gss="git show --stat"
+
+# git fetch all
+alias _gfa="git fetch --all"

@@ -1,0 +1,1 @@
+alias _npap="npm publish --access public"

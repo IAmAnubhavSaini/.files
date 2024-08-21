@@ -1,0 +1,7 @@
+alias _ns="npm run start"
+alias _nl="npm run lint"
+alias _nb="npm run build"
+alias _nt="npm run test"
+alias _nlt="_nl && _nt"
+alias _nbs="_nb && _ns"
+alias _nltbs="_nlt && _nbs"

@@ -1,17 +1,7 @@
-" set encoding
-set encoding=utf8
-
-" set colors
-set t_Co=256
-set term=xterm-256color
-
 " termguicolors
 " if (has("termguicolors"))
 "   set termguicolors
 " endif
-
-" show leader
-set showcmd
 
 " Enable recursive file search in subdirectories
 set path+=**
@@ -30,13 +20,6 @@ set backspace=indent,eol,start
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
-" set list
-set list
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· ",eol:↲,space:·
-
-" set showbreak: show a character at the end of a line when it's wrapped
-set showbreak=↪\
 
 " Use line wrapping and break lines at word boundaries
 set wrap
@@ -61,8 +44,6 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 " Show line numbers on the left side
 set number
 set nu
-hi clear LineNr
-hi LineNr ctermfg=grey ctermbg=black cterm=BOLD
 
 " Show relative numbers
 set relativenumber
@@ -107,8 +88,23 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
-"""""""""""""""""""""""""""""""""""""
 
+""" NERDTree """
+"""
+""" ### nerdtree
+""" 
+""" ```bash
+""" git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+""" vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
+""" ```
+""" 
+""" ### vim-airline
+""" 
+""" ```bash
+""" git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
+""" vim -u NONE -c ":helptags ~/.vim/pack/dist/start/vim-airline/doc" -c q
+""" ```
+"""
 " NERDTree
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -129,16 +125,11 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
-
-" colors
+""" COLORS """
 set background=dark
-" colorscheme quiet
-colorscheme anubhav
+colorscheme quiet
+" colorscheme anubhav
 
-" rust.vim
-" https://github.com/rust-lang/rust.vim
-let g:rustfmt_autosave = 1
-let g:rust_clip_command = 'xclip -selection clipboard'
 
 " Git Gutter
 " Your vimrc
@@ -155,28 +146,14 @@ highlight link GitGutterAddIntraLine DiffAdd
 " updates git changes in the gutter and writes buffer to swap file
 set updatetime=1000
 
-" tagbar
-nmap <F8> :TagbarToggle<CR>
-
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 50
 
-" airline powerline fonts
-let g:airline_powerline_fonts = 1
-
 " javascript
 let g:javascript_plugin_jsdoc = 1
-
-
-" eslint
-let g:syntastic_javascript_checkers = ['eslint']
-" lint current file
-noremap <leader>l  :make % <cr>:cwindow<cr>:redraw!<cr>
-" lint and fix current file
-noremap <leader>lf :make --fix % <cr>:cwindow<cr>:redraw!<cr>
 
 " editorconfig
 "" Don't apply editorconfig settings to fugitive buffers; don't mess with fugitive's settings
@@ -184,10 +161,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 "" Don't apply editorconfig settings to remote files; don't mess with scp's settings
 let g:EditorConfig_exclude_patterns = ['scp://.*']
 
-
 " code completion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-
-" prettier
-packloadall
