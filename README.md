@@ -2,7 +2,7 @@
 
 the dotfiles and more
 
-- .vimrc-simple
+- .vimrc-simple `cp ~/.files/.vimrc-simple ~/.vimrc`
 - .gitignore (global)
 - .bashrc
 - .gitconfig
