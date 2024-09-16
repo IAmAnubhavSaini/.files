@@ -3,6 +3,9 @@
 [user]
 	email = iamanubhavsaini+git@gmail.com
 	name = Anubhav Saini
+	signingkey =
+[github]
+	user = "iamanubhavsaini"
 [core]
 	excludesFile = /home/anubhav/.gitignore
 [color "diff"]
@@ -16,3 +19,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[commit]
+	gpgsign = true
