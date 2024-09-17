@@ -132,6 +132,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
+.env.*
 .env
 .env.development.local
 .env.test.local
@@ -270,6 +271,7 @@ Temporary Items
 ## vscode: https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
 ##
 
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -373,7 +375,7 @@ fabric.properties
 
 # Swap
 [._]*.s[a-v][a-z]
-!*.svg # comment out if you don't need vector files
+!*.svg
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
