@@ -745,3 +745,6 @@ dist-ssr/
 ## note taking apps
 .obsidian/
 .logseq/
+
+# nyc coverage
+coverage.txt
