@@ -1168,7 +1168,7 @@ dist-ssr/
 *.local
 
 ## note taking apps
-.obsidian/
+.obsidian/*
 !.obsidian/snippets/
 .logseq/
 
