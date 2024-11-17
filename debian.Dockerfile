@@ -49,7 +49,7 @@ COPY --chown=user:user .vimrc-simple /home/user/.vimrc-simple
 COPY --chown=user:user install-golang.sh /home/user/install-golang.sh
 COPY --chown=user:user setup-vim.sh /home/user/setup-vim.sh
 
-RUN sh -c "chmod u+x /home/user/install-golang.sh && sudo ./install-golang.sh" 
+RUN sh -c "chmod u+x /home/user/install-golang.sh && sudo ./install-golang.sh"
 RUN sh -c "chmod u+x /home/user/setup-vim.sh && ./setup-vim.sh"
 
 # Set default shell
@@ -57,4 +57,3 @@ SHELL ["/bin/zsh", "-c"]
 
 # Default command
 CMD ["zsh"]
-
