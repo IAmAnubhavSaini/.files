@@ -34,6 +34,13 @@ vim -u NONE -c ":helptags ~/.vim/pack/dist/start/vim-airline/doc" -c q
 
 ```bash
 git clone --depth=1 https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/pack/plugins/start/ctrlp
-
 echo '" CtrlP\nlet g:ctrlp_working_path_mode = '"'ra'" >> ~/.vimrc
 ```
+
+## Build debian container
+
+```bash
+docker build . --file debian.Dockerfile --tag f0c1s/debian:2024.11.17_7
+docker run --interactive --tty --rm f0c1s/debian:2024.11.17_7
+```
+

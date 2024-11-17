@@ -132,8 +132,8 @@ autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' 
 
 " colors
 set background=dark
-" colorscheme quiet
-colorscheme anubhav
+colorscheme quiet
+" colorscheme anubhav
 
 " rust.vim
 " https://github.com/rust-lang/rust.vim
