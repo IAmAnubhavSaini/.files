@@ -20,6 +20,12 @@ sudo apt install vim     # A very easy to get-into and hard-to-get-out, mental s
 sudo apt install ncdu htop ffmpeg vlc default-jdk 
 ```
 
+## codium setup
+
+Download from (release page)[https://github.com/VSCodium/vscodium/releases].
+
+Setup CAPSLOCK and Escape key switch: Change "Keyboard Dispatch" setting to `keyCode` from `code`. This has to be done even when you have setup `/etc/default/keyboard`.
+
 ## For .vimrc
 
 ### backup and swap
