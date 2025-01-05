@@ -44,3 +44,10 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "$key[Up]" up-line-or-beginning-search
 bindkey "$key[Down]" down-line-or-beginning-search
+
+# swap capslock with escape
+# This is done in /etc/default/keyboard now.
+# setxkbmap -option caps:swapescape
+
+## dependency alert: install bat ( sudo apt install bat ) and then use batcat on debian
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | batcat -p -lman'"
