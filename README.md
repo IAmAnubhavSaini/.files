@@ -22,7 +22,7 @@ sudo apt install ncdu htop ffmpeg vlc default-jdk
 
 ## codium setup
 
-Download from (release page)[https://github.com/VSCodium/vscodium/releases].
+Download from [release page](https://github.com/VSCodium/vscodium/releases).
 
 Setup CAPSLOCK and Escape key switch: Change "Keyboard Dispatch" setting to `keyCode` from `code`. This has to be done even when you have setup `/etc/default/keyboard`.
 
