@@ -7,6 +7,19 @@ the dotfiles and more
 - .bashrc
 - .gitconfig
 
+## Debian setup
+
+```bash
+sudo apt install bat &&  # Cat replacement; batcat on debian
+sudo apt install nmap && # Network util
+sudo apt install fzf &&  # Fuzzy search
+sudo apt install curl && # A linux util for downloading resources and poking servers
+sudo apt install git &&  # A clumsy distributed version control system
+sudo apt install vim     # A very easy to get-into and hard-to-get-out, mental stability gauging keyboard processor. You only use it because you are mentally strong.
+
+sudo apt install ncdu htop ffmpeg vlc default-jdk 
+```
+
 ## For .vimrc
 
 ### backup and swap
