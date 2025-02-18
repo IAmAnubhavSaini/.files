@@ -1,3 +1,6 @@
+# https://raw.githubusercontent.com/IAmAnubhavSaini/.files/refs/heads/main/.gitignore
+# curl https://raw.githubusercontent.com/IAmAnubhavSaini/.files/refs/heads/main/.gitignore -o .gitignore
+#
 # programming languages supported
 ## python           ✔
 ## rust             ✔
