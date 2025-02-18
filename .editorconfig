@@ -1,4 +1,5 @@
-# https://raw.githubusercontent.com/IAmAnubhavSaini/.files/main/.editorconfig
+# https://raw.githubusercontent.com/IAmAnubhavSaini/.files/refs/heads/main/.editorconfig
+# curl https://raw.githubusercontent.com/IAmAnubhavSaini/.files/refs/heads/main/.editorconfig -o .editorconfig
 
 root = true
 
