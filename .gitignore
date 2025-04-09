@@ -28,6 +28,8 @@
 ## mine
 ##
 
+.dist/
+.declarations/
 .idea/
 node_modules/
 *.sqlite3
